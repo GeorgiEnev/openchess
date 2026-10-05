@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/OpenChess/OpenChess.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OpenChess.Tests/OpenChess.Tests.csproj" />
+  </Folder>
+</Solution>
