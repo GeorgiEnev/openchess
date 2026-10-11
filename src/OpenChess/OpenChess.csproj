@@ -7,4 +7,8 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="OpenChess.Tests" />
+  </ItemGroup>
+
 </Project>
