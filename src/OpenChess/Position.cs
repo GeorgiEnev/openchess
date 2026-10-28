@@ -144,4 +144,18 @@ public class Position
     {
         return FenParser.Parse(fen);
     }
+
+    /// <summary>
+    /// Returns the current piece placement, side to move, castling rights, en passant target,
+    /// and move counters as a complete FEN string.
+    /// </summary>
+    /// <returns>Six space-separated FEN fields describing this position.</returns>
+    /// <remarks>
+    /// Preserves the recorded castling rights and en passant target without recalculating move availability.
+    /// The position is not modified.
+    /// </remarks>
+    public string ToFen()
+    {
+        return FenSerializer.Serialize(this);
+    }
 }
