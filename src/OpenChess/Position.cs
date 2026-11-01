@@ -158,4 +158,21 @@ public class Position
     {
         return FenSerializer.Serialize(this);
     }
+
+    /// <summary>
+    /// Returns candidate moves for the side-to-move piece on the specified square.
+    /// </summary>
+    /// <param name="from">The origin square to inspect.</param>
+    /// <returns>
+    /// Moves following piece movement and occupancy rules, including promotion choices and en passant.
+    /// An empty collection is returned for an empty origin or a piece belonging to the other side.
+    /// </returns>
+    /// <remarks>
+    /// Candidates may leave the moving side's king in check. Castling is not included.
+    /// The position is unchanged, and the order of results is unspecified.
+    /// </remarks>
+    public IReadOnlyList<Move> GetPseudoLegalMovesFrom(Square from)
+    {
+        return MoveGenerator.Generate(this, from);
+    }
 }
